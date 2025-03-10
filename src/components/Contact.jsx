@@ -1,22 +1,23 @@
 import React from "react";
 import emailjs from "emailjs-com";
+import { toast } from 'react-toastify';
 
 const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
         .sendForm(
-            "YOUR_SERVICE_ID",
-            "YOUR_TEMPLATE_ID",
+            "service_7a3xqdv",
+            "template_nrtw57l",
             e.target,
-            "YOUR_USER_ID"
+            "F__p_nX3w3JwMi3oK"
         )
         .then(
             (result) => {
-                alert("Message Sent!");
+              toast.success("✅ Message Sent Successfully!");
             },
             (error) => {
-                alert("Failed to send message!");
+              toast.error("❌ Failed to send message!");
             }
         );
 
@@ -33,13 +34,13 @@ const Contact = () => {
             >
                 <input
                     type="text"
-                    name="name"
+                    name="user_name"
                     placeholder="Name"
                     className="p-3 border rounded-md"
                 />
                 <input
                     type="email"
-                    name="email"
+                    name="user_email"
                     placeholder="Email"
                     className="p-3 border rounded-md"
                 />
